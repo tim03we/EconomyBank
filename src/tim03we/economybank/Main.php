@@ -34,7 +34,7 @@ class Main extends PluginBase implements Listener {
         $this->getServer()->getCommandMap()->register("bank", new BankCommand($this));
         $this->saveResource("settings.yml");
         $this->cfg = new Config($this->getDataFolder() . "settings.yml", Config::YAML);
-        $this->bank = new Config("../ServerFiles/bank.yml", Config::YAML);
+        $this->bank = new Config($this->getDataFolder() . "bank.yml", Config::YAML);
         if(!$this->getServer()->getPluginManager()->getPlugin("EconomyAPI")) {
             $this->getLogger()->alert("The plugin was deactivated because the EconomyAPI plugin was not found.");
             $this->getServer()->getPluginManager()->disablePlugin($this->getServer()->getPluginManager()->getPlugin("EconomyAPI"));
